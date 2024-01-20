@@ -1,0 +1,61 @@
+@model Prenotazioni;
+@{
+    ViewData["Title"] = "Prenota";
+}
+
+<script>
+    function SubmitP(){
+        alert("Nome inserito:" Nome "<br>Email inserita:" Email);
+    }
+</script>
+
+<div class="text-center">
+    <h1 class="display-4">Prenota</h1>
+
+    <form class="m-2" method="post" asp-action="Conferma">
+        <div class="form-group">
+            <label asp-for="Nome">Il tuo nome:</label>
+            <input asp-for="Nome" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Cognome">Il tuo Cognome:</label>
+            <input asp-for="Cognome" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="Email">La tua email:</label>
+            <input asp-for="Email" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="DataDiNascita">La tua data di nascita:</label>
+            <input asp-for="DataDiNascita" class="form-control" type="date">
+        </div>
+         <div class="form-group">
+            <label asp-for="sesso">Il tuo sesso:</label>
+            <br>
+                    <input  type="radio" id="M" name="sesso" value="Maschio">
+                    <label for="M">M</label><br>
+                    <input  type="radio" id="F" name="sesso" value="Femmina">
+                    <label for="F">F</label><br>
+                    <input  type="radio" id="NoSpecificato" name="sesso" value="Non Specificato">
+                    <label for="NoSpecificato">NoSpecifato</label><br>
+                    
+        </div>
+        
+        <div class="form-group">
+            <label asp-for="ruolo">Il tuo ruolo:</label>
+            <br>
+            <select asp-for="ruolo" class="form-control" >
+                <option value ="|Inserire Ruolo|">|Inserire Ruolo|</option>
+                <option value="Studente">Studente</option>
+                <option value="Insegnante">Insegnate</option>
+                <option value="Genitore">Genitore</option>
+            
+            </select>
+
+        </div>
+
+        <button type="submit" id="bottonePrenotazione" class="btn btn-primary">Prenota</button>
+
+    </form>
+</div>
